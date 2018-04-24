@@ -23,6 +23,8 @@ import { FormsResourceService } from '../openmrs-api/forms-resource.service';
 import { Observable } from 'rxjs/Observable';
 import { MdSnackBar } from '@angular/material';
 import * as _ from 'lodash';
+import { PrivateKeygen } from '../encryption/private-keygen';
+
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -74,6 +76,9 @@ export class LoginComponent implements OnInit {
 
     event.stopPropagation();
     event.preventDefault();
+
+    // let pkg = new PrivateKeygen();
+    // pkg.createAndStashPKey(password);
 
     let body = JSON.stringify({username, password});
     let currentRoute = window.location.toString();
