@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PrivateKeygenServiceService } from './private-keygen-service.service';
+import { PrivateKeygen } from './private-keygen';
 
-describe('PrivateKeygenServiceService', () => {
+describe('PrivateKeygen', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PrivateKeygenServiceService]
+      providers: [PrivateKeygen]
     });
   });
 
-  it('should be created', inject([PrivateKeygenServiceService], (service: PrivateKeygenServiceService) => {
+  it('should be created', inject([PrivateKeygen], (service: PrivateKeygen) => {
     expect(service).toBeTruthy();
   }));
 });
