@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { CryptoJS } from 'crypto-js';
-import { HttpClientModule } from '@angular/common/http';
+import { LocalStorageService } from '../utils/local-storage.service';
 
 @Injectable()
 export class PrivateKeygen {
 
-  private filename = 'p_key.json';
-  private http = new HttpClientModule();
+  private localStorageService = new LocalStorageService();
+  private STORAGE_KEY = 'privateEncryptionKey';
 
-  constructor() { }
+  public createAndStashPKey(password: string) {
+    this.localStorageService.setItem(this.STORAGE_KEY, password);
+    console.log(this.retrievePKey());
+  }
 
-  public createAndStashPKey(password: string){
-    let key = CryptoJS.pbkdf2(password);
-    console.log(key);
+  public retrievePKey(): string {
+    return this.localStorageService.getItem(this.STORAGE_KEY);
   }
 
 }

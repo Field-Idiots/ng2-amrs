@@ -77,8 +77,8 @@ export class LoginComponent implements OnInit {
     event.stopPropagation();
     event.preventDefault();
 
-    // let pkg = new PrivateKeygen();
-    // pkg.createAndStashPKey(password);
+    let pkg = new PrivateKeygen();
+    pkg.createAndStashPKey(password);
 
     let body = JSON.stringify({username, password});
     let currentRoute = window.location.toString();
