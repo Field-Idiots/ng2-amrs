@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { CryptoJS } from 'crypto-js';
 
 @Injectable()
-export class PasswordHashService {
+export class HashPassService {
 
   constructor() { }
 
-  public hashPassword(password: string): string {
-
+  public hashPassword(password: string) {
+    let hash = CryptoJS.SHA256(password);
     return '';
   }
-
 }
