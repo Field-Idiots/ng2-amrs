@@ -6,13 +6,14 @@ export class EncryptionService {
 
   constructor() { }
   public encryptRecord(data: any[], privateKey: string) : string{
-    let encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), privateKey);
-    return encryptedData;
+    let ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), privateKey);
+    return ciphertext;
 
   }
 
-  public decryptRecord(encrypted: string, privateKey: string) : string{
-    let decryptedData = CryptoJS.AES.decrypt(encrypted, privateKey);
+  public decryptRecord(ciphertext: string, privateKey: string) : string{
+    let bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), 'secretkey');
+    let decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
     return decryptedData;
   }
 
