@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../utils/local-storage.service';
+import { CryptoJS } from 'crypto-js';
 
 @Injectable()
 export class PrivateKeygen {
