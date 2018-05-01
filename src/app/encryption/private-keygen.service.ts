@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../utils/local-storage.service';
+import { CryptoJS } from 'crypto-js';
 
 @Injectable()
 export class PrivateKeygen {
@@ -24,6 +25,4 @@ export class PrivateKeygen {
   private stashPKey(key: string) {
     this.localStorageService.setItem(this.STORAGE_KEY, key);
   }
-
-
 }
