@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PrivateKeygen } from './private-keygen';
+import { PrivateKeygen } from './private-keygen.service';
 
 describe('PrivateKeygen', () => {
   beforeEach(() => {
