@@ -25,6 +25,4 @@ export class PrivateKeygen {
   private stashPKey(key: string) {
     this.localStorageService.setItem(this.STORAGE_KEY, key);
   }
-
-
 }
