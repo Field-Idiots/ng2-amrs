@@ -138,5 +138,6 @@ compiled/
 .awcache/
 .angulardoc.json
 .angulardoc.json
-package-lock.json
 package.json
+package-lock.json
+
