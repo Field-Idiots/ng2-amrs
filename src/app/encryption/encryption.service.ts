@@ -12,7 +12,7 @@ export class EncryptionService {
   }
 
   public decryptRecord(ciphertext: string, privateKey: string) : string{
-    let bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), 'secretkey');
+    let bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), privateKey);
     let decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
     return decryptedData;
   }
